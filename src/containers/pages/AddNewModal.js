@@ -37,8 +37,9 @@ const AddNewModal = ({ modalOpen, toggleModal, categories, getUser }) => {
 
   const check = async () => {
     let user = await reactLocalStorage.get("user_data");
-    user = JSON.parse(user);
-    console.log("addnewmodel", user);
+    if(user){
+      user = JSON.parse(user);
+      }    console.log("addnewmodel", user);
     setUserId(user.userId);
     setUserName(user.namef);
     setUserEmail(user.userEmail);

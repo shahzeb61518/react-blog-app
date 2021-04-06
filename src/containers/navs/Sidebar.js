@@ -325,7 +325,9 @@ class Sidebar extends Component {
 
   filteredList = (menuItems) => {
     let user = reactLocalStorage.get("user_data");
+    if(user){
     user = JSON.parse(user);
+    }
     console.log("user>>>>", user);
     if (user.role === "creator") {
       menuItems = menuItems.filter((el) => el.id !== "creator");

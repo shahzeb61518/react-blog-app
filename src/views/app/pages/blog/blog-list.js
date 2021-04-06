@@ -43,8 +43,9 @@ const BlogList = (props) => {
   const check = async () => {
     let user = await reactLocalStorage.get("user_data");
     console.log(user);
-    user = JSON.parse(user);
-    setUserId(user.userId);
+    if(user){
+      user = JSON.parse(user);
+      }    setUserId(user.userId);
     setUserName(user.namef);
     setUserRole(user.role);
 

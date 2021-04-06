@@ -12,8 +12,9 @@ const DataListView = ({ product, isSelect, collect, onCheckItem }) => {
 
   useEffect(() => {
     let user = reactLocalStorage.get("user_data");
-    user = JSON.parse(user);
-    console.log("user>>>>", user);
+    if(user){
+      user = JSON.parse(user);
+      }    console.log("user>>>>", user);
     getFollowing(user.userId);
   }, []);
 

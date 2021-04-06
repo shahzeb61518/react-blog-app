@@ -81,8 +81,9 @@ const ChatApp = ({
         setToImage(location.state.toObject.image);
       }
       let user = reactLocalStorage.get("user_data");
-      user = JSON.parse(user);
-      // console.log("user>>>>", user);
+      if(user){
+        user = JSON.parse(user);
+        }      // console.log("user>>>>", user);
       setFromId(user.userId);
       setFromName(user.namef);
       setFromImage(user.profileImage);

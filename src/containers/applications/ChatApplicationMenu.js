@@ -60,8 +60,9 @@ const ChatApplicationMenu = ({
 
   const check = () => {
     let user = reactLocalStorage.get("user_data");
-    user = JSON.parse(user);
-    // console.log("user>>>>", user);
+    if(user){
+      user = JSON.parse(user);
+      }    // console.log("user>>>>", user);
     setUserId(user.userId);
     setUserName(user.namef);
     getFollowers(user.userId);
